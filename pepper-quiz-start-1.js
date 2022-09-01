@@ -65,47 +65,46 @@ $('.allergy-check').change(function(){
 
 $('.allergy-check').change(function(){
 	if($("input[name='dog_allergy_fishoil']").is(":checked")){
-	 $('.allergy_ingre_fishoil').show();
-   $('.recipe_recommendation_duck').hide();
-   $('.recipe_recommendation_beef').hide();
-   $('.recipe_recommendation_chicken').hide();
-   $('.recipe_recommendation_lamb').hide();
-   }else{
-   $('.allergy_ingre_fishoil').hide();}
-   $('.recipe_recommendation_duck').show();
-   $('.recipe_recommendation_beef').show();
-   $('.recipe_recommendation_chicken').show();
-   $('.recipe_recommendation_lamb').show();
+		 $('.allergy_ingre_fishoil').show();
+  	 }else{
+  		 $('.allergy_ingre_fishoil').hide();}
+	
 	if($("input[name='dog_allergy_beef']").is(":checked")){
-	 $('.allergy_ingre_beef').show();
-   $('.recipe_recommendation_beef').hide();
-   }else{
-   $('.allergy_ingre_beef').hide();}
-   $('.recipe_recommendation_beef').show();
+		 $('.allergy_ingre_beef').show();
+  		 $('.recipe_recommendation_beef').addClass('hide-block');
+   	}else{
+ 		  $('.allergy_ingre_beef').hide();
+  		 $('.recipe_recommendation_beef').removeClass('hide-block');}
+	
  	if($("input[name='dog_allergy_duck']").is(":checked")){
-	 $('.allergy_ingre_duck').show();
-   }else{
-   $('.allergy_ingre_duck').hide();}
+		 $('.allergy_ingre_duck').show();
+ 	  }else{
+  		 $('.allergy_ingre_duck').hide();}
+	
  	if($("input[name='dog_allergy_lamb']").is(":checked")){
-	 $('.allergy_ingre_lamb').show();
-   }else{
-   $('.allergy_ingre_lamb').hide();}
+		 $('.allergy_ingre_lamb').show();
+ 	  }else{
+ 		  $('.allergy_ingre_lamb').hide();}
+	
  	if($("input[name='dog_allergy_chicken']").is(":checked")){
-	 $('.allergy_ingre_chicken').show();
-   }else{
-   $('.allergy_ingre_chicken').hide();}
+		 $('.allergy_ingre_chicken').show();
+ 	  }else{
+ 		  $('.allergy_ingre_chicken').hide();}
+	
  	if($("input[name='dog_allergy_grain']").is(":checked")){
-	 $('.allergy_ingre_grain').show();
-   }else{
-   $('.allergy_ingre_grain').hide();}
+		 $('.allergy_ingre_grain').show();
+ 	  }else{
+ 		  $('.allergy_ingre_grain').hide();}
+	
  	if($("input[name='dog_allergy_sweetpotato']").is(":checked")){
-	 $('.allergy_ingre_sweetpotato').show();
-   }else{
-   $('.allergy_ingre_sweetpotato').hide();}
+		 $('.allergy_ingre_sweetpotato').show();
+ 	  }else{
+ 		  $('.allergy_ingre_sweetpotato').hide();}
+	
  	if($("input[name='dog_allergy_potato']").is(":checked")){
-	 $('.allergy_ingre_potato').show();
-   }else{
-   $('.allergy_ingre_potato').hide();}
+		 $('.allergy_ingre_potato').show();
+	   }else{
+ 		  $('.allergy_ingre_potato').hide();}
 });
 
 $('.isCondition-check').change(function(){
