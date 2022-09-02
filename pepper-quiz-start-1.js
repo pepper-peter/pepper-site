@@ -61,8 +61,8 @@ $('#owner_priority').on('change', function() {
     OPD2.addClass('hide-message');
     OPD3.addClass('hide-message');
     OP1.removeClass('hide-message');
-    OP1.addClass('hide-message');
-    OP1.addClass('hide-message');
+    OP2.addClass('hide-message');
+    OP3.addClass('hide-message');
   }
 });
 
