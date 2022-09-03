@@ -35,14 +35,10 @@ $('.email-button').on('click',function(){
         kpd = Math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
     }
     kpdf = kpd/2;
-    console.log('kpdd = ' + kpd);
-    console.log('kpdf = ' + kpdf);
-    console.log('Vage = ' + Vage);
-    console.log('Vcurrentweight = ' + Vcurrentweight);
     $('.dog_kcal_out').text(kpd);
     $('.dog_kcal_out_half').text(kpdf);
-    ppd = kpd*0.48;
-    ppdh = kpd*0.48*0.6;
+    ppd = Math.round(kpd*0.48);
+    ppdh =Math.round(kpd*0.48*0.6);
     $('.plan_ppd_full_out').text(ppd);
     $('.plan_ppd_half_out').text(ppdh);
 });
