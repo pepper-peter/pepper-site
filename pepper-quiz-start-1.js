@@ -13,6 +13,8 @@ var kpd = 0;
 var Vbodyshape = 1;
 var Vcurrentweight = 0;
 var Vgoalweight = 0;
+var ppd = 0;
+var ppdh = 0;
 
 $('form input').on('keypress', function(e) {
     return e.which !== 13;
@@ -39,12 +41,13 @@ $('.email-button').on('click',function(){
     console.log('Vcurrentweight = ' + Vcurrentweight);
     $('.dog_kcal_out').text(kpd);
     $('.dog_kcal_out_half').text(kpdf);
+    ppd = kpd*0.48;
+    ppdh = kpd*0.48*0.6;
+    $('.plan_ppd_full_out').text(ppd);
+    $('.plan_ppd_half_out').text(ppdh);
 });
 
-var ppd = kpd*0.48;
-var ppdh = kpd*0.48*0.6;
-$('.plan_ppd_full_out').text(ppd);
-$('.plan_ppd_half_out').text(ppdh);
+
 
 
 
