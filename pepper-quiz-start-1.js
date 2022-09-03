@@ -113,7 +113,7 @@ $('#owner_priority').on('change', function() {
     OP2.addClass('hide-message');
     OP3.removeClass('hide-message');
 	}else if($('#owner_priority').val()=='2'){
-  	$("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+    $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
     $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
     PRF.removeClass('hide-message');
     PRH.addClass('hide-message');
@@ -123,10 +123,10 @@ $('#owner_priority').on('change', function() {
     OP1.addClass('hide-message');
     OP2.removeClass('hide-message');
     OP3.addClass('hide-message');
-   }else if($('#owner_priority').val()=='1'){
+   }else{
     $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
     $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
-	  PRF.removeClass('hide-message');
+    PRF.removeClass('hide-message');
     PRH.addClass('hide-message');
     OPD1.removeClass('hide-message');
     OPD2.addClass('hide-message');
@@ -148,12 +148,12 @@ $("input[tag='isCondition-check']" ).addClass('isCondition-check');
 
 
 $('#dog_gender').change(function() {
-    if ($(this).val()=="F"){
-       $('.dog_gender_out_m').hide();
-	 $('.dog_gender_out_f').show();
-    } else{
+    if ($(this).val()=="M"){
        $('.dog_gender_out_m').show();
-	 $('.dog_gender_out_f').hide();}
+	 $('.dog_gender_out_f').hide();
+    } else{
+       $('.dog_gender_out_m').hide();
+	 $('.dog_gender_out_f').show();}
 });
 
 $('.activity-check').change(function(){
