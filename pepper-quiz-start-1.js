@@ -28,9 +28,9 @@ $('#owner_email').on('keyup', function(){
 
 $('.email-button').on('click',function(){
     if(Vbodyshape == 1){
-        kpd =math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+        kpd =Math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
     }else{
-        kpd = math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+        kpd = Math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
     }
     $('.dog_kcal_out') = kpd;
     $('.dog_kcal_out_half') = kpd/2;
@@ -79,15 +79,6 @@ $('#dog_treatsfrequency').change(function(){
 	}else if($(this).val() == 3){
 		Vtreats = 0.8;}
 });
-
-
-if(Vbodyshape == 1){
-    kpd =math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
-    $('.dog_kcal_out') = kpd;
-}else{
-    kpd = math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
-    $('.dog_kcal_out') = kpd;
-}
 
 $("input[name='dog_isAllergy'][value='No']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
 $("input[name='dog_isCondition'][value='No']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
