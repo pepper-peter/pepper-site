@@ -15,6 +15,23 @@ var Vcurrentweight = 0;
 var Vgoalweight = 0;
 var ppd = 0;
 var ppdh = 0;
+var sppd_stone = 0;
+var stone_price_coef = 0.7; //price per kg
+var sppd_mobility = 0;
+var mobility_price_coef = 0.6; //price per kg
+var sppd_ut = 0;
+var ut_price_coef = 0.5; //price per kg
+var sppd_liver = 0;
+var liver_price_coef = 1; //price per kg
+var sppd_shine = 0;
+var shine_price_coef = 0.9; //price per kg
+var sppd_chill = 0;
+var chill_price_coef = 0.7; //price per kg
+var sppd_vision = 0;
+var vision_price_coef = 0.5; //price per kg
+var sppd_boost = 0;
+var boost_price_coef = 0.6; //price per kg
+
 
 $('form input').on('keypress', function(e) {
     return e.which !== 13;
@@ -30,8 +47,24 @@ $('#owner_email').on('keyup', function(){
 
 $('.email-button').on('click',function(){
     if(Vbodyshape == 1){
-        kpd =Math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+        sppd_stone = Math.round(Vcurrentweight*stone_price_coef);
+        sppd_mobility = Math.round(Vcurrentweight*mobility_price_coef);
+        sppd_ut = Math.round(Vcurrentweight*ut_price_coef);
+        sppd_liver = Math.round(Vcurrentweight*liver_price_coef);
+        sppd_shine = Math.round(Vcurrentweight*shine_price_coef);
+        sppd_chill = Math.round(Vcurrentweight*chill_price_coef);
+        sppd_vision = Math.round(Vcurrentweight*vision_price_coef);
+        sppd_boost = Math.round(Vcurrentweight*boost_price_coef);
+        kpd = Math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
     }else{
+        sppd_stone = Math.round(Vgoalweight*stone_price_coef);
+        sppd_mobility = Math.round(Vgoalweight*mobility_price_coef);
+        sppd_ut = Math.round(Vgoalweight*ut_price_coef);
+        sppd_liver = Math.round(Vgoalweight*liver_price_coef);
+        sppd_shine = Math.round(Vgoalweight*shine_price_coef);
+        sppd_chill = Math.round(Vgoalweight*chill_price_coef);
+        sppd_vision = Math.round(Vgoalweight*vision_price_coef);
+        sppd_boost = Math.round(Vgoalweight*boost_price_coef);
         kpd = Math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
     }
     kpdf = kpd/2;
@@ -41,11 +74,15 @@ $('.email-button').on('click',function(){
     ppdh =Math.round(kpd*0.48*0.6);
     $('.plan_ppd_full_out').text(ppd);
     $('.plan_ppd_half_out').text(ppdh);
+    $('.sup_ppd_out_stone').text(sppd_stone);
+    $('.sup_ppd_out_mobility').text(sppd_mobility);
+    $('.sup_ppd_out_ut').text(sppd_ut);
+    $('.sup_ppd_out_liver').text(sppd_liver);
+    $('.sup_ppd_out_shine').text(sppd_shine);
+    $('.sup_ppd_out_chill').text(sppd_chill);
+    $('.sup_ppd_out_vision').text(sppd_vision);
+    $('.sup_ppd_out_boost').text(sppd_boost);
 });
-
-
-
-
 
 $('#dog_currentweight').change(function(){
     Vcurrentweight = $(this).val();
@@ -340,5 +377,4 @@ if($('.recipe-check:checked').length==0){
     $('.if-recipe-checked').show();
   }
 });
-
 
