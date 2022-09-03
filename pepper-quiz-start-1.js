@@ -32,10 +32,9 @@ $('.email-button').on('click',function(){
     }else{
         kpd = Math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
     }
-    $('.dog_kcal_out') = kpd;
-    $('.dog_kcal_out_half') = kpd/2;
 })
-
+$('.dog_kcal_out') = kpd;
+$('.dog_kcal_out_half') = kpd/2;
 
 
 
