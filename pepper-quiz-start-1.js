@@ -5,6 +5,15 @@ document.getElementById("Submit").onclick = function passDogName() {
     return false;
 };
 
+var Vage = 1.4;
+var Vspayed = 1;
+var Vactivity = 1;
+var Vtreats = 0.9;
+var kpd = 0;
+var Vbodyshape = 1;
+var Vcurrentweight = 0;
+var Vgoalweight = 0;
+
 $('form input').on('keypress', function(e) {
     return e.which !== 13;
 });
@@ -16,6 +25,69 @@ $('#dog_name').on('keyup', function(){
 $('#owner_email').on('keyup', function(){
 	$('.final_owner_email').attr("value",$(this).val());
 });
+
+$('.email-button').on('click',function(){
+    if(Vbodyshape == 1){
+        kpd =math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+    }else{
+        kpd = math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+    }
+    $('.dog_kcal_out') = kpd;
+    $('.dog_kcal_out_half') = kpd/2;
+})
+
+
+
+
+$('#dog_currentweight').change(function(){
+    Vcurrentweight = $(this).val();
+});
+
+$('#dog_bodygoalweight').change(function(){
+    Vgoalweight = $(this).val();
+});
+
+$('#dog_agemonthyear').change(function(){
+	if($('#dog_agemonthyear').val() == 2 && $('#dog_agenum').val() < 11){
+		Vage = 1.7;}
+});
+  
+$('#dog_agenum').change(function(){
+	if($('#dog_agemonthyear').val() == 2 && $('#dog_agenum').val() < 11){
+		Vage = 1.7;
+    }
+});
+
+$('#dog_spayed').change(function(){
+	if($(this).val() == 2){
+	Vspayed = 1.2;
+    }
+  });
+
+
+$('#dog_activity').change(function(){
+	if ($(this).val() == 1){
+		Vactivity = .9;
+	}else if($(this).val() == 3){
+		Vactivity = 1.1;}
+});
+
+
+$('#dog_treatsfrequency').change(function(){
+	if ($(this).val() == 2){
+		Vtreats = 1;
+	}else if($(this).val() == 3){
+		Vtreats = 0.8;}
+});
+
+
+if(Vbodyshape == 1){
+    kpd =math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+    $('.dog_kcal_out') = kpd;
+}else{
+    kpd = math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+    $('.dog_kcal_out') = kpd;
+}
 
 $("input[name='dog_isAllergy'][value='No']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
 $("input[name='dog_isCondition'][value='No']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
@@ -98,21 +170,23 @@ var BGOC = $('.dog_bodygoal_out_cut');
 $('.bodyshape-check').change(function(){
 	if($("input[name='dog_bodyshape'][value='1']").is(":checked")){
 	 $('.body-goal').removeClass("remove-wrap");
-   $('#dog-bodygoalweight').val('');
+   $('#dog_bodygoalweight').val('');
    $('.bodyshape-button').removeClass("button-active");
    BGOG.addClass('show-text');
    BGOS.removeClass('show-text');
    BGOC.removeClass('show-text');
+   Vbodyshape = 2;
   }else if($("input[name='dog_bodyshape'][value='3']").is(":checked")){
 	 $('.body-goal').removeClass("remove-wrap");
-   $('#dog-bodygoalweight').val('');
+   $('#dog_bodygoalweight').val('');
    $('.bodyshape-button').removeClass("button-active");
    BGOC.addClass('show-text');
    BGOS.removeClass('show-text');
    BGOG.removeClass('show-text');
+   Vbodyshape = 2;
 	}else if($("input[name='dog_bodyshape'][value='2']").is(":checked")){
 	 $('.body-goal').addClass("remove-wrap");
-   $('#dog-bodygoalweight').val('');
+   $('#dog_bodygoalweight').val('');
    $('.bodyshape-button').addClass("button-active");
    BGOS.addClass('show-text');
    BGOG.removeClass('show-text');
@@ -267,3 +341,5 @@ if($('.recipe-check:checked').length==0){
     $('.if-recipe-checked').show();
   }
 });
+
+
