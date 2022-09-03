@@ -31,6 +31,7 @@ var sppd_vision = 0;
 var vision_price_coef = 0.5; //price per kg
 var sppd_boost = 0;
 var boost_price_coef = 0.6; //price per kg
+var period = 0;
 
 
 $('form input').on('keypress', function(e) {
@@ -82,6 +83,28 @@ $('.email-button').on('click',function(){
     $('.sup_ppd_out_chill').text(sppd_chill);
     $('.sup_ppd_out_vision').text(sppd_vision);
     $('.sup_ppd_out_boost').text(sppd_boost);
+    if(kpd < 130){
+    period = 80;
+    }else if(kpd>=130 && kpd <160){
+        period = 65;
+    }else if(kpd>=160 && kpd <190){
+        period = 55;
+    }else if(kpd>=190 && kpd <240){
+        period = 45;
+    }else if(kpd>=240 && kpd <330){
+        period = 35;
+    }else if(kpd>=330 && kpd <430){
+        period = 28;
+    }else if(kpd>=430 && kpd <600){
+        period = 21;
+    }else if(kpd>=600 && kpd <880){
+        period = 14;
+    }else if(kpd>=880 && kpd <1220){
+        period = 10;
+    }else if(kpd>=1230){
+        period = 7;
+    }
+    $('.plan_period_out').text(period);
 });
 
 $('#dog_currentweight').change(function(){
