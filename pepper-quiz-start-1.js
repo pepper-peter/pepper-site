@@ -37,8 +37,8 @@ $('.email-button').on('click',function(){
     console.log('kpdf = ' + kpdf);
     console.log('Vage = ' + Vage);
     console.log('Vcurrentweight = ' + Vcurrentweight);
-    $('.dog_kcal_out').val(kpd);
-    $('.dog_kcal_out_half').val(kpdf);
+    $('.dog_kcal_out').text(val(kpd));
+    $('.dog_kcal_out_half').text(val(kpdf));
 });
 
 
