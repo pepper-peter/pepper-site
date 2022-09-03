@@ -41,6 +41,10 @@ $('.email-button').on('click',function(){
     $('.dog_kcal_out_half').text(kpdf);
 });
 
+var ppd = kpd*0.48;
+var ppdh = kpd*0.48*0.6;
+$('.plan_ppd_full_out').text(ppd);
+$('.plan_ppd_half_out').text(ppdh);
 
 
 
