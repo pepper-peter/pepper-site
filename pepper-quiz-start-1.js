@@ -10,6 +10,7 @@ var Vspayed = 1;
 var Vactivity = 1;
 var Vtreats = 0.9;
 var kpd = 0;
+var kpdf = 0;
 var Vbodyshape = 1;
 var Vcurrentweight = 0;
 var Vgoalweight = 0;
@@ -32,6 +33,148 @@ var vision_price_coef = 0.5; //price per kg
 var sppd_boost = 0;
 var boost_price_coef = 0.6; //price per kg
 var period = 0;
+var final_kcal;
+var final_ppd;
+var final_shipping;
+var final_stone_ppd = 0;
+var final_mobility_ppd = 0;
+var final_ut_ppd = 0;
+var final_liver_ppd = 0;
+var final_shine_ppd = 0;
+var final_vision_ppd = 0;
+var final_chill_ppd = 0;
+var final_boost_ppd = 0;
+var final_sup_ppd = 0;
+var final_food_price_total = 0;
+var final_sup_price_total = 0;
+var final_order_price_total = 0;
+
+
+
+$('.final-button').on('click', function(){
+   
+    if($("input[name='plan_selection'][value='Half']").is(":checked")){
+        $('.final_plan_selected').text("半餐方案");
+        final_kcal = kpdf;
+        final_ppd = ppdh;
+        final_shipping = 200;
+        $('.final_kcal_out').text(final_kcal);
+        $('.final_ppd').text(final_ppd);
+        $('.final_shipping_fee').text(final_shipping);
+        $('.sup-block').addClass('hide-block');
+    }else{
+        $('.final_plan_selected').text("全餐方案");
+        final_kcal = kpd;
+        final_ppd = ppd;
+        final_shipping = 0;
+        $('.final_kcal_out').text(final_kcal);
+        $('.final_ppd').text(final_ppd);
+        $('.final_shipping_fee').text("免運");
+        $('.sup-block').removeClass('hide-block');
+    }
+
+    if($('.sup-check:checked').length==0){
+        $('.no-sup').addClass('hide-block'); 
+    }else{
+        $('.no-sup').removeClass('hide-block');
+      }
+
+    
+    if($("input[name='recipe_selection_duck']").is(":checked")){
+        $('.final_duck_selected').removeClass('hide-block');
+        }else{
+        $('.final_duck_selected').addClass('hide-block');}
+    if($("input[name='recipe_selection_beef']").is(":checked")){
+        $('.final_beef_selected').removeClass('hide-block');
+        }else{
+        $('.final_beef_selected').addClass('hide-block');}
+    if($("input[name='recipe_selection_lamb']").is(":checked")){
+        $('.final_lamb_selected').removeClass('hide-block');
+        }else{
+        $('.final_lamb_selected').addClass('hide-block');}
+    if($("input[name='recipe_selection_chicken']").is(":checked")){
+        $('.final_chicken_selected').removeClass('hide-block');
+        }else{
+        $('.final_chicken_selected').addClass('hide-block');}
+
+    if($("input[name='supplement_selection_stone']").is(":checked")){
+        $('.final_stone_selected').removeClass('hide-block');
+        final_stone_ppd = sppd_stone;
+        $('.final_stone_ppd').text(final_stone_ppd);
+        }else{
+        $('.final_stone_selected').addClass('hide-block');
+        final_stone_ppd = 0;
+        $('.final_stone_ppd').text(final_stone_ppd);}
+    if($("input[name='supplement_selection_mobility']").is(":checked")){
+        $('.final_mobility_selected').removeClass('hide-block');
+        final_mobility_ppd = sppd_mobility;
+        $('.final_mobility_ppd').text(final_mobility_ppd);
+        }else{
+        $('.final_mobility_selected').addClass('hide-block');
+        final_mobility_ppd = 0;
+        $('.final_mobility_ppd').text(final_mobility_ppd);}
+    if($("input[name='supplement_selection_ut']").is(":checked")){
+        $('.final_ut_selected').removeClass('hide-block');
+        final_ut_ppd = sppd_ut;
+        $('.final_ut_ppd').text(final_ut_ppd);
+        }else{
+        $('.final_ut_selected').addClass('hide-block');
+        final_ut_ppd = 0;
+        $('.final_ut_ppd').text(final_ut_ppd);}
+    if($("input[name='supplement_selection_liver']").is(":checked")){
+        $('.final_liver_selected').removeClass('hide-block');
+        final_liver_ppd = sppd_liver;
+        $('.final_liver_ppd').text(final_liver_ppd);
+        }else{
+        $('.final_liver_selected').addClass('hide-block');
+        final_liver_ppd = 0;
+        $('.final_liver_ppd').text(final_liver_ppd);}
+    if($("input[name='supplement_selection_shine']").is(":checked")){
+        $('.final_shine_selected').removeClass('hide-block');
+        final_shine_ppd = sppd_shine;
+        $('.final_shine_ppd').text(final_shine_ppd);
+        }else{
+        $('.final_shine_selected').addClass('hide-block');
+        final_shine_ppd = 0;
+        $('.final_shine_ppd').text(final_shine_ppd);}
+    if($("input[name='supplement_selection_vision']").is(":checked")){
+        $('.final_vision_selected').removeClass('hide-block');
+        final_vision_ppd = sppd_vision;
+        $('.final_vision_ppd').text(final_vision_ppd);
+        }else{
+        $('.final_vision_selected').addClass('hide-block');
+        final_vision_ppd = 0;
+        $('.final_vision_ppd').text(final_vision_ppd);}
+    if($("input[name='supplement_selection_chill']").is(":checked")){
+        $('.final_chill_selected').removeClass('hide-block');
+        final_chill_ppd = sppd_chill;
+        $('.final_chill_ppd').text(final_chill_ppd);
+        }else{
+        $('.final_chill_selected').addClass('hide-block');
+        final_chill_ppd = 0;
+        $('.final_chill_ppd').text(final_chill_ppd);}
+    if($("input[name='supplement_selection_boost']").is(":checked")){
+        $('.final_boost_selected').removeClass('hide-block');
+        final_boost_ppd = sppd_boost;
+        $('.final_boost_ppd').text(final_boost_ppd);
+        }else{
+        $('.final_boost_selected').addClass('hide-block');
+        final_boost_ppd = 0;
+        $('.final_boost_ppd').text(final_boost_ppd);}
+
+    final_sup_ppd = final_vision_ppd + final_stone_ppd + final_mobility_ppd + 
+    final_ut_ppd + final_liver_ppd + final_shine_ppd + final_chill_ppd + final_boost_ppd
+
+    final_food_price_total = final_ppd*period;
+    final_sup_price_total = final_sup_ppd*period;
+    final_order_price_total = final_food_price_total + final_sup_price_total - final_shipping;
+    $('.final_sup_ppd').text(final_sup_ppd);
+    $('.final_food_price_total').text(final_food_price_total);
+    $('final_sup_price_total').text(final_sup_price_total);
+    $('final_order_price_total').text(final_order_price_total);
+
+});
+
 
 
 $('form input').on('keypress', function(e) {
@@ -84,7 +227,7 @@ $('.email-button').on('click',function(){
     $('.sup_ppd_out_vision').text(sppd_vision);
     $('.sup_ppd_out_boost').text(sppd_boost);
     if(kpd < 130){
-    period = 80;
+        period = 80;
     }else if(kpd>=130 && kpd <160){
         period = 65;
     }else if(kpd>=160 && kpd <190){
@@ -201,6 +344,7 @@ $('#owner_priority').on('change', function() {
 $("input[tag='bodyshape']" ).addClass('bodyshape-check');
 $("input[tag='activity']" ).addClass('activity-check');
 $("input[tag='recipe-check']" ).addClass('recipe-check');
+$("input[tag='sup-check']" ).addClass('sup-check');
 $("input[tag='allergy-check']" ).addClass('allergy-check');
 $("input[tag='isAllergy-check']" ).addClass('isAllergy-check');
 $("input[tag='condition-check']" ).addClass('condition-check');
