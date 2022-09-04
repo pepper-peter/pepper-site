@@ -74,9 +74,9 @@ $('.final-button').on('click', function(){
     }
 
     if($('.sup-check:checked').length==0){
-        $('.no-sup').addClass('hide-block'); 
+        $('.no-sup').removeClass('hide-block'); 
     }else{
-        $('.no-sup').removeClass('hide-block');
+        $('.no-sup').addClass('hide-block');
       }
 
     
@@ -291,6 +291,7 @@ $('#dog_treatsfrequency').change(function(){
 		Vtreats = 0.8;}
 });
 
+$("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
 $("input[name='dog_isAllergy'][value='No']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
 $("input[name='dog_isCondition'][value='No']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
 
