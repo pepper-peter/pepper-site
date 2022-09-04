@@ -60,7 +60,7 @@ $('.final-button').on('click', function(){
         final_shipping = 200;
         $('.final_kcal_out').text(final_kcal);
         $('.final_ppd').text(final_ppd);
-        $('.final_shipping_fee').text(final_shipping);
+        $('.final_shipping_fee').text("$"+final_shipping);
         $('.sup-block').addClass('hide-block');
     }else{
         $('.final_plan_selected').text("全餐方案");
@@ -170,8 +170,8 @@ $('.final-button').on('click', function(){
     final_order_price_total = final_food_price_total + final_sup_price_total - final_shipping;
     $('.final_sup_ppd').text(final_sup_ppd);
     $('.final_food_price_total').text(final_food_price_total);
-    $('final_sup_price_total').text(final_sup_price_total);
-    $('final_order_price_total').text(final_order_price_total);
+    $('.final_sup_price_total').text(final_sup_price_total);
+    $('.final_order_price_total').text(final_order_price_total);
 
 });
 
