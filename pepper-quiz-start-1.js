@@ -167,7 +167,7 @@ $('.final-button').on('click', function(){
 
     final_food_price_total = final_ppd*period;
     final_sup_price_total = final_sup_ppd*period;
-    final_order_price_total = final_food_price_total + final_sup_price_total  final_shipping;
+    final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping;
     $('.final_sup_ppd').text(final_sup_ppd);
     $('.final_food_price_total').text(final_food_price_total);
     $('.final_sup_price_total').text(final_sup_price_total);
