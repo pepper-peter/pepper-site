@@ -375,10 +375,10 @@ var OP1 = $('.owner_priority_out_1');
 var OP2 = $('.owner_priority_out_2');
 var OP3 = $('.owner_priority_out_3');
 
-var x = validity.valid||(value='');;
-$('#dog_agenum').attr("oninput","x");
-$('#dog_currentweight').attr("oninput","x");
-$('#dog_bodygoalweight').attr("oninput","x");
+var x = "validity.valid||(value='')";
+$('#dog_agenum').attr("oninput",x);
+$('#dog_currentweight').attr("oninput",x);
+$('#dog_bodygoalweight').attr("oninput",x);
 
 
 $('#owner_priority').on('change', function() {
