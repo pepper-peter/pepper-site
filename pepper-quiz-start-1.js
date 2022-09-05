@@ -617,9 +617,18 @@ $('.condition-check').change(function(){
 
 $('.recipe-check').change(function(){
 if($('.recipe-check:checked').length==0){
+    $('.move-down-block').addClass('hide-block'); 
     $('.if-recipe-checked').hide(); 
 }else{
-    $('.if-recipe-checked').show();
+    $('.move-down-block').removeClass('hide-block'); 
   }
+});
+
+$('.move-down-button').on('click', function(){
+    $('.if-recipe-checked').show();
+});
+
+$('.move-down-button-2').on('click', function(){
+    $('.if-plan-checked').show();
 });
 
