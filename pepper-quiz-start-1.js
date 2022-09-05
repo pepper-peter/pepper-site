@@ -48,6 +48,7 @@ var final_sup_ppd = 0;
 var final_food_price_total = 0;
 var final_sup_price_total = 0;
 var final_order_price_total = 0;
+var final_discount_amount = 0;
 
 
 
@@ -172,10 +173,61 @@ $('.final-button').on('click', function(){
     $('.final_food_price_total').text(final_food_price_total);
     $('.final_sup_price_total').text(final_sup_price_total);
     $('.final_order_price_total').text(final_order_price_total);
-
 });
 
+$('.discount-check-button').on('click',function(){
+    //9折
+    if($('#final_discount_code').val() == "HIPEPPER10"){
+        final_discount_amount = (final_food_price_total + final_sup_price_total)*0.1;
+        $('.discount-error-message').addClass('hide-block');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("HIPEPPER10");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+    }
+    //7折
+    else if($('#final_discount_code').val() == "HIPEPPER30"){
+        final_discount_amount = (final_food_price_total + final_sup_price_total)*0.3;
+        $('.discount-error-message').addClass('hide-block');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("HIPEPPER30");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+    }
+    //5折
+    else if($('#final_discount_code').val() == "HIPEPPER50"){
+        final_discount_amount = (final_food_price_total + final_sup_price_total)*0.5;
+        $('.discount-error-message').addClass('hide-block');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("HIPEPPER50");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+    }
+    //免單
+    else if($('#final_discount_code').val() == "VVVIP"){
+        final_discount_amount = (final_food_price_total + final_sup_price_total);
+        $('.discount-error-message').addClass('hide-block');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("VVIP");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+    }
+    //錯誤
+    else{
+        final_discount_amount = 0;
+        $('.discount-error-message').removeClass('hide-block');
+        $('.discount-input-block').removeClass('hide-block');
+        $('.discount-success-block').addClass('hide-block');
+        $('.final_discount_amount').text("$"+final_discount_amount);
+    }
+});
 
+$('.remove-discount').on('click', function(){
+    final_discount_amount = 0;
+    discount-input-block.removeClass('hide-block');
+    discount-success-block.addClass('hide-block');
+    $('.final_discount_amount').text("$"+final_discount_amount);
+});
 
 $('form input').on('keypress', function(e) {
     return e.which !== 13;
