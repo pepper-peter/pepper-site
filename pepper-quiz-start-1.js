@@ -431,11 +431,11 @@ $("input[tag='isCondition-check']" ).addClass('isCondition-check');
 
 $('#dog_gender').change(function() {
     if ($(this).val()=="M"){
-       $('.dog_gender_out_m').show();
-	 $('.dog_gender_out_f').hide();
+       $('.dog_gender_out_m').removeClass('hide-block');
+	 $('.dog_gender_out_f').addClass('hide-block');;
     } else{
-       $('.dog_gender_out_m').hide();
-	 $('.dog_gender_out_f').show();}
+       $('.dog_gender_out_m').addClass('hide-block');;
+	 $('.dog_gender_out_f').removeClass('hide-block');}
 });
 
 $('.activity-check').change(function(){
