@@ -255,6 +255,7 @@ $('#dog_name').on('keyup', function(){
 	$('.dog_name_out').text($(this).val());
 });
 
+
 $('#owner_email').on('keyup', function(){
 	$('.final_owner_email').attr("value",$(this).val());
 });
@@ -373,6 +374,11 @@ var OPD3 = $('.owner_priority_detail_out_3');
 var OP1 = $('.owner_priority_out_1');
 var OP2 = $('.owner_priority_out_2');
 var OP3 = $('.owner_priority_out_3');
+
+$('#dog_agenum').prop("oninput",validity.valid|| (value=''));
+$('#dog_currentweight').prop("oninput",validity.valid|| (value=''));
+$('#dog_bodygoalweight').prop("oninput",validity.valid|| (value=''));
+
 
 $('#owner_priority').on('change', function() {
   if($('#owner_priority').val()=='3'){
