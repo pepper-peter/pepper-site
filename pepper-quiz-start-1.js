@@ -178,7 +178,7 @@ $('.final-button').on('click', function(){
 $('.discount-check-button').on('click',function(){
     //9折
     if($('#final_discount_code').val() == "HIPEPPER10"){
-        final_discount_amount = (final_food_price_total + final_sup_price_total)*0.1;
+        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.1);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('#final_discount_code').val('');
         $('.discount-error-message').addClass('hide-block');
@@ -190,7 +190,7 @@ $('.discount-check-button').on('click',function(){
     }
     //7折
     else if($('#final_discount_code').val() == "HIPEPPER30"){
-        final_discount_amount = (final_food_price_total + final_sup_price_total)*0.3;
+        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.3);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('#final_discount_code').val('');
         $('.discount-error-message').addClass('hide-block');
@@ -203,7 +203,7 @@ $('.discount-check-button').on('click',function(){
     }
     //5折
     else if($('#final_discount_code').val() == "HIPEPPER50"){
-        final_discount_amount = (final_food_price_total + final_sup_price_total)*0.5;
+        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.5);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
         $('#final_discount_code').val('');
