@@ -179,54 +179,67 @@ $('.discount-check-button').on('click',function(){
     //9折
     if($('#final_discount_code').val() == "HIPEPPER10"){
         final_discount_amount = (final_food_price_total + final_sup_price_total)*0.1;
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("HIPEPPER10");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
     }
     //7折
     else if($('#final_discount_code').val() == "HIPEPPER30"){
         final_discount_amount = (final_food_price_total + final_sup_price_total)*0.3;
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("HIPEPPER30");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
+
     }
     //5折
     else if($('#final_discount_code').val() == "HIPEPPER50"){
         final_discount_amount = (final_food_price_total + final_sup_price_total)*0.5;
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("HIPEPPER50");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
+
     }
     //免單
     else if($('#final_discount_code').val() == "VVVIP"){
         final_discount_amount = (final_food_price_total + final_sup_price_total);
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("VVIP");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
+
     }
     //錯誤
     else{
         final_discount_amount = 0;
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').removeClass('hide-block');
         $('.discount-input-block').removeClass('hide-block');
         $('.discount-success-block').addClass('hide-block');
-        $('.final_discount_amount').text("$"+final_discount_amount);
     }
 });
 
 $('.remove-discount').on('click', function(){
     final_discount_amount = 0;
+    final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
     $('.discount-input-block').removeClass('hide-block');
     $('.discount-success-block').addClass('hide-block');
-    $('.final_discount_amount').text("$"+final_discount_amount);
+    $('.final_discount_amount').text("—  ");
+    $('.final_order_price_total').text(final_order_price_total);
 });
 
 $('form input').on('keypress', function(e) {
