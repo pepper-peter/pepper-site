@@ -619,6 +619,7 @@ $('.recipe-check').change(function(){
 if($('.recipe-check:checked').length==0){
     $('.move-down-block').addClass('hide-block'); 
     $('.if-recipe-checked').hide(); 
+    $('.if-plan-checked').hide();
 }else{
     $('.move-down-block').removeClass('hide-block'); 
   }
