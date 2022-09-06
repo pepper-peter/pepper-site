@@ -419,8 +419,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.removeClass('hide-message');
         OP3.addClass('hide-message');
-        $('.move-down-block-2').addClass('hide-block'); //
-        $('.div-block-step-2').removeClass('hide-block'); //
+        $('.move-down-block-2').removeClass('hide-block'); 
+        $('.div-block-step-2').addClass('hide-block'); 
    }else if($('#owner_priority').val()=='2' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
