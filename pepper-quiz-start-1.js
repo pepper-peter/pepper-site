@@ -251,7 +251,7 @@ $('form input').on('keypress', function(e) {
     return e.which !== 13;
 });
 
-$('#dog_name').on('keyup', function(){
+$('#dog_name').on('focusout', function(){
 	$('.dog_name_out').text($(this).val());
 });
 
