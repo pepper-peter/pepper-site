@@ -382,59 +382,84 @@ $('#dog_bodygoalweight').attr("oninput",x);
 
 
 $('#owner_priority').on('change', function() {
-  if($('#owner_priority').val()=='3'){
-  	$("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-    $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
-    PRF.addClass('hide-message');
-    PRH.removeClass('hide-message');
-    OPD1.addClass('hide-message');
-    OPD2.addClass('hide-message');
-    OPD3.removeClass('hide-message');
-    OP1.addClass('hide-message');
-    OP2.addClass('hide-message');
-    OP3.removeClass('hide-message');
-    if ($(window).width() > 767) {
+  if($('#owner_priority').val()=='3' && $(window).width() > 767){
+  	    $("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+        $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        PRF.addClass('hide-message');
+        PRH.removeClass('hide-message');
+        OPD1.addClass('hide-message');
+        OPD2.addClass('hide-message');
+        OPD3.removeClass('hide-message');
+        OP1.addClass('hide-message');
+        OP2.addClass('hide-message');
+        OP3.removeClass('hide-message');
         $('.Div-Block-step-2').removeClass('hide-block');
         $('.move-down-block-2').addClass('hide-block');
-    }else if ($(window).width() <= 767){
+    }else if($('#owner_priority').val()=='3' && $(window).width() <= 767){
+        $("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+        $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        PRF.addClass('hide-message');
+        PRH.removeClass('hide-message');
+        OPD1.addClass('hide-message');
+        OPD2.addClass('hide-message');
+        OPD3.removeClass('hide-message');
+        OP1.addClass('hide-message');
+        OP2.addClass('hide-message');
+        OP3.removeClass('hide-message');
         $('.Div-Block-step-2-mobile').removeClass('hide-block-mobile');
         $('.move-down-block-2-mobile').addClass('hide-block-mobile');
-    }
-	}else if($('#owner_priority').val()=='2'){
-    $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-    $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
-    PRF.removeClass('hide-message');
-    PRH.addClass('hide-message');
-    OPD1.addClass('hide-message');
-    OPD2.removeClass('hide-message');
-    OPD3.addClass('hide-message');
-    OP1.addClass('hide-message');
-    OP2.removeClass('hide-message');
-    OP3.addClass('hide-message');
-    if ($(window).width() > 767) {
+	}else if($('#owner_priority').val()=='2' && $(window).width() > 767){
+        $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        PRF.removeClass('hide-message');
+        PRH.addClass('hide-message');
+        OPD1.addClass('hide-message');
+        OPD2.removeClass('hide-message');
+        OPD3.addClass('hide-message');
+        OP1.addClass('hide-message');
+        OP2.removeClass('hide-message');
+        OP3.addClass('hide-message');
         $('.move-down-block-2').removeClass('hide-block');
         $('.Div-Block-step-2').addClass('hide-block');
-    }else if ($(window).width() <= 767){
-        $('.Div-Block-step-2-mobile').addClass('hide-block-mobile');
-        $('.move-down-block-2-mobile').removeClass('hide-block-mobile');    }
-   }else{
-    $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-    $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
-    PRF.removeClass('hide-message');
-    PRH.addClass('hide-message');
-    OPD1.removeClass('hide-message');
-    OPD2.addClass('hide-message');
-    OPD3.addClass('hide-message');
-    OP1.removeClass('hide-message');
-    OP2.addClass('hide-message');
-    OP3.addClass('hide-message');
-    if ($(window).width() > 767) {
-        $('.move-down-block-2').removeClass('hide-block');
-        $('.Div-Block-step-2').addClass('hide-block');
-    }else if ($(window).width() <= 767){
+   }else if($('#owner_priority').val()=='2' && $(window).width() <= 767){
+        $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        PRF.removeClass('hide-message');
+        PRH.addClass('hide-message');
+        OPD1.addClass('hide-message');
+        OPD2.removeClass('hide-message');
+        OPD3.addClass('hide-message');
+        OP1.addClass('hide-message');
+        OP2.removeClass('hide-message');
+        OP3.addClass('hide-message');
         $('.Div-Block-step-2-mobile').addClass('hide-block-mobile');
         $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
-    }
+   }else if (($('#owner_priority').val()=='1' && $(window).width() > 767)){
+        $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
+        PRF.removeClass('hide-message');
+        PRH.addClass('hide-message');
+        OPD1.removeClass('hide-message');
+        OPD2.addClass('hide-message');
+        OPD3.addClass('hide-message');
+        OP1.removeClass('hide-message');
+        OP2.addClass('hide-message');
+        OP3.addClass('hide-message');
+        $('.move-down-block-2').removeClass('hide-block');
+        $('.Div-Block-step-2').addClass('hide-block');
+  }else if (($('#owner_priority').val()=='1' && $(window).width() <= 767)){
+        $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
+        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
+        PRF.removeClass('hide-message');
+        PRH.addClass('hide-message');
+        OPD1.removeClass('hide-message');
+        OPD2.addClass('hide-message');
+        OPD3.addClass('hide-message');
+        OP1.removeClass('hide-message');
+        OP2.addClass('hide-message');
+        OP3.addClass('hide-message');
+        $('.Div-Block-step-2-mobile').addClass('hide-block-mobile');
+        $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
   }
 });
 
@@ -663,10 +688,10 @@ $('.move-down-button').on('click', function(){
 
 $('.move-down-button-2').on('click', function(){
     $('.if-plan-checked').show();
-    if(window.width()>767){
+    if($(window).width()>767){
         $('.div-block-step-3').removeClass('hide-block');
         $('.div-block-step-3-mobile').addClass('hide-block-mobile');
-    }else if (window.width()<=767){
+    }else if ($(window).width()<=767){
         $('.div-block-step-3-mobile').removeClass('hide-block-mobile');
         $('.div-block-step-3').addClass('hide-block');
     }
