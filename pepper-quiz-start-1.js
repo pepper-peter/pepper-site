@@ -453,6 +453,7 @@ $('.bodyshape-check').change(function(){
 	 $('.body-goal').removeClass("remove-wrap");
    $('#dog_bodygoalweight').val('');
    $('.bodyshape-button').removeClass("button-active");
+   $('html,body').animate({scrollTop: $('#goalweight-block').offset().top},'slow');
    BGOG.addClass('show-text');
    BGOS.removeClass('show-text');
    BGOC.removeClass('show-text');
@@ -461,6 +462,7 @@ $('.bodyshape-check').change(function(){
 	 $('.body-goal').removeClass("remove-wrap");
    $('#dog_bodygoalweight').val('');
    $('.bodyshape-button').removeClass("button-active");
+   $('html,body').animate({scrollTop: $('#goalweight-block').offset().top},'slow');
    BGOC.addClass('show-text');
    BGOS.removeClass('show-text');
    BGOG.removeClass('show-text');
