@@ -270,7 +270,7 @@ $('.email-button').on('click',function(){
         sppd_chill = Math.round(Vcurrentweight*chill_price_coef);
         sppd_vision = Math.round(Vcurrentweight*vision_price_coef);
         sppd_boost = Math.round(Vcurrentweight*boost_price_coef);
-        kpd = Math.round((Vcurrentweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+        kpd = Math.round((((Vcurrentweight)**.75)*70*Vage*Vspayed*Vactivity*Vtreats)/10)*10;
     }else{
         sppd_stone = Math.round(Vgoalweight*stone_price_coef);
         sppd_mobility = Math.round(Vgoalweight*mobility_price_coef);
@@ -280,7 +280,7 @@ $('.email-button').on('click',function(){
         sppd_chill = Math.round(Vgoalweight*chill_price_coef);
         sppd_vision = Math.round(Vgoalweight*vision_price_coef);
         sppd_boost = Math.round(Vgoalweight*boost_price_coef);
-        kpd = Math.round((Vgoalweight)**.75*70*Vage*Vspayed*Vactivity*Vtreats/10)*10;
+        kpd = Math.round((((Vgoalweight)**.75)*70*Vage*Vspayed*Vactivity*Vtreats)/10)*10;
     }
     kpdf = kpd/2;
     $('.dog_kcal_out').text(kpd);
@@ -519,6 +519,7 @@ $('.bodyshape-check').change(function(){
    BGOS.addClass('show-text');
    BGOG.removeClass('show-text');
    BGOC.removeClass('show-text');
+   Vbodyshape = 1;
 	}
 });
 
