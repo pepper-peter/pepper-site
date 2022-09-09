@@ -602,12 +602,12 @@ $('.allergy-check').change(function(){
 
 $('.isCondition-check').change(function(){
 	if($("input[name='dog_isCondition'][value='Yes']").is(":checked")){
-    $('condition-option-block').removeClass("pointer-none");
+    $('.condition-option-block').removeClass("pointer-none");
 	$('.sup_recommendation_out_1').show();
     $('.sup_recommendation_out_2').hide();
 	$('.condition-option-button').removeClass("button-active");
   }else{
-    $('condition-option-block').addClass("pointer-none");
+    $('.condition-option-block').addClass("pointer-none");
     $("input[tag='condition-check']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
     $('.condition-option-button').addClass("button-active");
     $('.sup_recommendation_out_1').hide();
