@@ -526,10 +526,12 @@ $('.bodyshape-check').change(function(){
 $('.isAllergy-check').change(function(){
 	if($("input[name='dog_isAllergy'][value='Yes']").is(":checked")){
 	 $('.allergy-ingre-button').removeClass("button-active");
-   $('.recipe_recommendation_out_1').show();
-   $('.recipe_recommendation_out_2').hide();
+     $('.allergy-option-block').removeClass("pointer-none");
+     $('.recipe_recommendation_out_1').show();
+     $('.recipe_recommendation_out_2').hide();
   }else{
    $('.allergy-ingre-button').addClass("button-active");
+   $('.allergy-option-block').addClass("pointer-none");
    $('.recipe_recommendation_out_2').show();
    $('.recipe_recommendation_out_1').hide();
    $("input[tag='allergy-check']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
@@ -600,14 +602,16 @@ $('.allergy-check').change(function(){
 
 $('.isCondition-check').change(function(){
 	if($("input[name='dog_isCondition'][value='Yes']").is(":checked")){
-	 $('.sup_recommendation_out_1').show();
-   $('.sup_recommendation_out_2').hide();
-	 $('.condition-option-button').removeClass("button-active");
+    $('condition-option-block').removeClass("pointer-none");
+	$('.sup_recommendation_out_1').show();
+    $('.sup_recommendation_out_2').hide();
+	$('.condition-option-button').removeClass("button-active");
   }else{
-   $("input[tag='condition-check']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
-   $('.condition-option-button').addClass("button-active");
-   $('.sup_recommendation_out_1').hide();
-   $('.sup_recommendation_out_2').show();
+    $('condition-option-block').addClass("pointer-none");
+    $("input[tag='condition-check']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
+    $('.condition-option-button').addClass("button-active");
+    $('.sup_recommendation_out_1').hide();
+    $('.sup_recommendation_out_2').show();
 }
 });
    
