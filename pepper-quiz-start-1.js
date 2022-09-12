@@ -56,21 +56,29 @@ $('.final-button').on('click', function(){
    
     if($("input[name='plan_selection'][value='Half']").is(":checked")){
         $('.final_plan_selected').text("半餐方案");
+        $('.final_plan_selected').val("半餐方案");
         final_kcal = kpdf;
         final_ppd = ppdh;
         final_shipping = 200;
         $('.final_kcal_out').text(final_kcal);
+        $('.final_kcal_out').val(final_kcal);
         $('.final_ppd').text(final_ppd);
+        $('.final_ppd').val(final_ppd);
         $('.final_shipping_fee').text("$"+final_shipping);
+        $('.final_shipping_fee').val(final_shipping);
         $('.sup-block').addClass('hide-block');
     }else{
         $('.final_plan_selected').text("全餐方案");
+        $('.final_plan_selected').val("全餐方案");
         final_kcal = kpd;
         final_ppd = ppd;
         final_shipping = 0;
         $('.final_kcal_out').text(final_kcal);
+        $('.final_kcal_out').val(final_kcal);
         $('.final_ppd').text(final_ppd);
+        $('.final_ppd').val(final_ppd);
         $('.final_shipping_fee').text("免運");
+        $('.final_shipping_fee').val(final_shipping);
         $('.sup-block').removeClass('hide-block');
     }
 
@@ -170,9 +178,13 @@ $('.final-button').on('click', function(){
     final_sup_price_total = final_sup_ppd*period;
     final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
     $('.final_sup_ppd').text(final_sup_ppd);
+    $('.final_sup_ppd').val(final_sup_ppd);
     $('.final_food_price_total').text(final_food_price_total);
+    $('.final_food_price_total').val(final_food_price_total);
     $('.final_sup_price_total').text(final_sup_price_total);
+    $('.final_sup_price_total').val(final_sup_price_total);
     $('.final_order_price_total').text(final_order_price_total);
+    $('.final_order_price_total').val(final_order_price_total);
 });
 
 $('.discount-check-button').on('click',function(){
@@ -186,7 +198,10 @@ $('.discount-check-button').on('click',function(){
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("HIPEPPER10 (為您第一箱打9折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
+        $('.final_order_price_total').val(final_order_price_total);
+
     }
     //7折
     else if($('#final_discount_code').val() == "HIPEPPER30"){
@@ -198,8 +213,9 @@ $('.discount-check-button').on('click',function(){
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("HIPEPPER30 (為您第一箱打7折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
-
+        $('.final_order_price_total').val(final_order_price_total);
     }
     //5折
     else if($('#final_discount_code').val() == "HIPEPPER50"){
@@ -224,8 +240,9 @@ $('.discount-check-button').on('click',function(){
         $('.discount-success-block').removeClass('hide-block');
         $('.discount-code-name').text("VVVIP (為您第一箱免單!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
-
+        $('.final_order_price_total').val(final_order_price_total);
     }
     //錯誤
     else{
@@ -244,7 +261,9 @@ $('.remove-discount').on('click', function(){
     $('.discount-input-block').removeClass('hide-block');
     $('.discount-success-block').addClass('hide-block');
     $('.final_discount_amount').text("— ");
+    $('.final_discount_amount').val(final_discount_amount);
     $('.final_order_price_total').text(final_order_price_total);
+    $('.final_order_price_total').val(final_order_price_total);
 });
 
 $('form input').on('keypress', function(e) {
@@ -319,6 +338,7 @@ $('.email-button').on('click',function(){
         period = 7;
     }
     $('.plan_period_out').text(period);
+    $('.plan_period_out').val(period);
 });
 
 $('#dog_currentweight').change(function(){
