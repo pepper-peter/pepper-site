@@ -43,13 +43,15 @@ const main = ({emitEvents = true} = {}) => {
 main({emitEvents: false});
 setInterval(main, 500);
 
-export default devtools;
-
 if (devtools.isOpen) {
 while (true) {
  window.location.href = "https://pepper-site-v2.webflow.io/404";
 }
 }
+
+export default devtools;
+
+
 	document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
