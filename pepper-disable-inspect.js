@@ -21,7 +21,9 @@ const main = ({emitEvents = true} = {}) => {
 
 	if (
 		!(heightThreshold && widthThreshold)
-		&& ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+		&& ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold) 
+		&& (window.innerWidth => 992)
+		
 	) {
       if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 			emitEvent(true, orientation);
