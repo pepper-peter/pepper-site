@@ -15,42 +15,36 @@ const emitEvent = (isOpen, orientation) => {
 };
 
 const main = ({emitEvents = true} = {}) => {
-	const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > threshold;
+	const widthThreshold = globalThis.outerWidth - globalThis.innerWidth >= 0;
 	const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > threshold;
 	const orientation = widthThreshold ? 'vertical' : 'horizontal';
 
 	if (
 		!(heightThreshold && widthThreshold)
-		&& ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold))	
-	 {
-      if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
+		&& ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+	) {
+		if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 			emitEvent(true, orientation);
-			}
+		}
 
-			devtools.isOpen = true;
-			devtools.orientation = orientation;
-  
-		} else {
+		devtools.isOpen = true;
+		devtools.orientation = orientation;
+	} else {
 		if (devtools.isOpen && emitEvents) {
 			emitEvent(false, undefined);
-			}
-
-			devtools.isOpen = false;
-			devtools.orientation = undefined;
 		}
+
+		devtools.isOpen = false;
+		devtools.orientation = undefined;
+	}
 };
 
 main({emitEvents: false});
 setInterval(main, 500);
 
-if (devtools.isOpen) {
-while (true) {
+if (devtools.isOpen){
  window.location.href = "https://pepper-site-v2.webflow.io/404";
 }
-}
-
-export default devtools;
-
 
 	document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
