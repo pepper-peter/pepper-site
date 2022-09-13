@@ -25,7 +25,6 @@ const main = ({emitEvents = true} = {}) => {
 	 {
       if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 			emitEvent(true, orientation);
-	      window.location.href = "https://pepper-site-v2.webflow.io/404";
 			}
 
 			devtools.isOpen = true;
@@ -46,6 +45,11 @@ setInterval(main, 500);
 
 export default devtools;
 
+if (devtools.isOpen) {
+while (true) {
+ window.location.href = "https://pepper-site-v2.webflow.io/404";
+}
+}
 	document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
