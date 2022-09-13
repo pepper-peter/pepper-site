@@ -21,17 +21,17 @@ const main = ({emitEvents = true} = {}) => {
 
 	if (
 		!(heightThreshold && widthThreshold)
-		&& ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold) 
-		&& (window.innerWidth >= 992)
+		&& ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold))
 		
 	) {
       if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 			emitEvent(true, orientation);
+	      window.location.href = "https://pepper-site-v2.webflow.io/404";
 			}
 
 			devtools.isOpen = true;
 			devtools.orientation = orientation;
-      window.location.href = "https://pepper-site-v2.webflow.io/404";
+  
 		} else {
 		if (devtools.isOpen && emitEvents) {
 			emitEvent(false, undefined);
