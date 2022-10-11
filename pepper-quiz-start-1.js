@@ -67,7 +67,7 @@ $('.final-button').on('click', function(){
         $('.final_shipping_fee').text("$"+final_shipping);
         $('.final_shipping_fee').val(final_shipping);
         $('.sup-block').addClass('hide-block');
-	$("input[name='supplement_selection_stone’]").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
+	$("input[name='supplement_selection_stone']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
 	$("input[name='supplement_selection_mobility']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
 	$("input[name='supplement_selection_ut']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
 	$("input[name='supplement_selection_liver']").prop("checked",false).prev('.w-checkbox-input').removeClass('w--redirected-checked');
