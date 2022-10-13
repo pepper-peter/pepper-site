@@ -10,7 +10,9 @@ var Vspayed = 1;
 var Vactivity = 1;
 var Vtreats = 0.9;
 var kpd = 0;
+var gpd = 0;
 var kpdf = 0;
+var gpdf = 0;
 var Vbodyshape = 1;
 var Vcurrentweight = 0;
 var Vgoalweight = 0;
@@ -299,6 +301,7 @@ $('.email-button').on('click',function(){
         sppd_vision = Math.round(Vcurrentweight*vision_price_coef);
         sppd_boost = Math.round(Vcurrentweight*boost_price_coef);
         kpd = Math.round((((Vcurrentweight)**.75)*70*Vage*Vspayed*Vactivity*Vtreats)/10)*10;
+	gpd = Math.round((kpd/1.3)/10)*10;
     }else{
         sppd_stone = Math.round(Vgoalweight*stone_price_coef);
         sppd_mobility = Math.round(Vgoalweight*mobility_price_coef);
@@ -309,8 +312,12 @@ $('.email-button').on('click',function(){
         sppd_vision = Math.round(Vgoalweight*vision_price_coef);
         sppd_boost = Math.round(Vgoalweight*boost_price_coef);
         kpd = Math.round((((Vgoalweight)**.75)*70*Vage*Vspayed*Vactivity*Vtreats)/10)*10;
+	gpd = Math.round((kpd/1.3)/10)*10;
     }
     kpdf = kpd/2;
+    gpdf = gpd/2;
+    $('.dog_gram_out').text(gpd);
+    $('.dog_gram_out_half').text(gpdf);
     $('.dog_kcal_out').text(kpd);
     $('.dog_kcal_out_half').text(kpdf);
     ppd = Math.round(kpd*0.48);
