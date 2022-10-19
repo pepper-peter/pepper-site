@@ -572,11 +572,11 @@ $('.bodyshape-check').change(function(){
 
 $('.activity-check').change(function(){
 	if($("input[name='dog_activity'][value='1']").is(":checked")){
-   		Vbodyshape = 0.9;
+   		Vactivity = 0.9;
   	}else if($("input[name='dog_activity'][value='3']").is(":checked")){
-   		Vbodyshape = 1.1;
+   		Vactivity = 1.1;
 	}else if($("input[name='dog_activity'][value='2']").is(":checked")){
-   		Vbodyshape = 1;
+   		Vactivity = 1;
 	}
 });
 
