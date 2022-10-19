@@ -200,14 +200,14 @@ $('.final-button').on('click', function(){
 
 $('.discount-check-button').on('click',function(){
     //9折
-    if($('#final_discount_code').val() == "HIPEPPER10"){
+    if($('#final_discount_code').val() == "HiPepper10"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.1);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('#final_discount_code').val('');
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
-        $('.discount-code-name').text("HIPEPPER10 (為您第一箱打9折!)");
+        $('.discount-code-name').text("HiPepper10 (為您第一箱打9折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
         $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
@@ -215,28 +215,28 @@ $('.discount-check-button').on('click',function(){
 
     }
     //7折
-    else if($('#final_discount_code').val() == "HIPEPPER30"){
+    else if($('#final_discount_code').val() == "HiPepper30"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.3);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('#final_discount_code').val('');
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
-        $('.discount-code-name').text("HIPEPPER30 (為您第一箱打7折!)");
+        $('.discount-code-name').text("HiPepper30 (為您第一箱打7折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
         $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
         $('.final_order_price_total').val(final_order_price_total);
     }
     //5折
-    else if($('#final_discount_code').val() == "HIPEPPER50"){
+    else if($('#final_discount_code').val() == "HiPepper50"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.5);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
         $('#final_discount_code').val('');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
-        $('.discount-code-name').text("HIPEPPER50 (為您第一箱打5折!)");
+        $('.discount-code-name').text("HiPepper50 (為您第一箱打5折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
 
@@ -368,27 +368,35 @@ $('#dog_bodygoalweight').change(function(){
 $('#dog_agemonthyear').change(function(){
 	if($('#dog_agemonthyear').val() == 2 && $('#dog_agenum').val() < 11){
 		Vage = 1.7;}
+	else{
+		Vage = 1.4;}
 });
   
 $('#dog_agenum').change(function(){
 	if($('#dog_agemonthyear').val() == 2 && $('#dog_agenum').val() < 11){
-		Vage = 1.7;
-    }
+		Vage = 1.7;}
+	else{
+		Vage = 1.4;}
 });
 
 $('#dog_spayed').change(function(){
 	if($(this).val() == 2){
 	Vspayed = 1.2;
+    }else{
+	    Vspayed = 1;
     }
   });
 
 
-$('#dog_activity').change(function(){
+/*$('#dog_activity').change(function(){
 	if ($(this).val() == 1){
 		Vactivity = .9;
 	}else if($(this).val() == 3){
 		Vactivity = 1.1;}
-});
+	else{
+		Vactivity = 1;}
+});*/
+
 
 
 $('#dog_treatsfrequency').change(function(){
@@ -396,6 +404,8 @@ $('#dog_treatsfrequency').change(function(){
 		Vtreats = 1;
 	}else if($(this).val() == 3){
 		Vtreats = 0.8;}
+	else{
+		Vtreats = 0.9;}
 });
 
 $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
@@ -556,6 +566,17 @@ $('.bodyshape-check').change(function(){
    BGOG.removeClass('show-text');
    BGOC.removeClass('show-text');
    Vbodyshape = 1;
+	}
+});
+
+
+$('.activity-check').change(function(){
+	if($("input[name='dog_activity'][value='1']").is(":checked")){
+   		Vbodyshape = 0.9;
+  	}else if($("input[name='dog_activity'][value='3']").is(":checked")){
+   		Vbodyshape = 1.1;
+	}else if($("input[name='dog_activity'][value='2']").is(":checked")){
+   		Vbodyshape = 1;
 	}
 });
 
