@@ -214,6 +214,21 @@ $('.discount-check-button').on('click',function(){
         $('.final_order_price_total').val(final_order_price_total);
 
     }
+    // 艾倫粉絲訂購
+    else if($('#final_discount_code').val() == "AllenPug"){
+        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.1);
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
+        $('#final_discount_code').val('HiPepper10');
+        $('.discount-error-message').addClass('hide-block');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("AllenPug (巴哥艾倫粉絲第一箱打9折!)");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_discount_amount').val(final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
+    	$('.final_order_price_total').val(final_order_price_total);
+
+    }
     //7折
     else if($('#final_discount_code').val() == "HiPepper30"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.3);
