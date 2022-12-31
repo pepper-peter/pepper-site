@@ -335,8 +335,10 @@ $('.email-button').on('click',function(){
     $('.dog_gram_out_half').text(gpdf);
     $('.dog_kcal_out').text(kpd);
     $('.dog_kcal_out_half').text(kpdf);
-    ppd = Math.round(kpd*0.48);
-    ppdh =Math.round(kpd*0.48*0.6);
+    //ppd = Math.round(kpd*0.48);
+    //ppdh =Math.round(kpd*0.48*0.6);
+    ppd = Math.round((gpd/100)*69.2);
+    ppdh = Math.round((gpdf/100)*79.2);
     $('.plan_ppd_full_out').text(ppd);
     $('.plan_ppd_half_out').text(ppdh);
     $('.sup_ppd_out_stone').text(sppd_stone);
