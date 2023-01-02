@@ -218,7 +218,7 @@ $('.discount-check-button').on('click',function(){
     else if($('#final_discount_code').val() == "AllenPug"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.1);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
-        $('#final_discount_code').val('HiPepper10');
+        $('#final_discount_code').val('AllenPug');
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
@@ -227,31 +227,45 @@ $('.discount-check-button').on('click',function(){
         $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
     	$('.final_order_price_total').val(final_order_price_total);
-
     }
-    //7折
-    else if($('#final_discount_code').val() == "HiPepper30"){
-        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.3);
+	
+    //85折
+    else if($('#final_discount_code').val() == "PNF15"){
+        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.15);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
-        $('#final_discount_code').val('HiPepper30');
+        $('#final_discount_code').val('PNF15');
         $('.discount-error-message').addClass('hide-block');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
-        $('.discount-code-name').text("HiPepper30 (為您第一箱打7折!)");
+        $('.discount-code-name').text("PNF15 (為您第一箱打85折!)");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_discount_amount').val(final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
+        $('.final_order_price_total').val(final_order_price_total);
+
+    //7折
+    else if($('#final_discount_code').val() == "Pepper30"){
+        final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.3);
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
+        $('#final_discount_code').val('Pepper30');
+        $('.discount-error-message').addClass('hide-block');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("Pepper30 (為您第一箱打7折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
         $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
         $('.final_order_price_total').val(final_order_price_total);
     }
     //5折
-    else if($('#final_discount_code').val() == "HiPepper50"){
+    else if($('#final_discount_code').val() == "Pepper50"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.5);
         final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
         $('.discount-error-message').addClass('hide-block');
-        $('#final_discount_code').val('HiPepper50');
+        $('#final_discount_code').val('Pepper50');
         $('.discount-input-block').addClass('hide-block');
         $('.discount-success-block').removeClass('hide-block');
-        $('.discount-code-name').text("HiPepper50 (為您第一箱打5折!)");
+        $('.discount-code-name').text("Pepper50 (為您第一箱打5折!)");
         $('.final_discount_amount').text("- $"+final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
 
