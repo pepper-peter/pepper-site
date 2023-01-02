@@ -242,7 +242,7 @@ $('.discount-check-button').on('click',function(){
         $('.final_discount_amount').val(final_discount_amount);
         $('.final_order_price_total').text(final_order_price_total);
         $('.final_order_price_total').val(final_order_price_total);
-
+     }
     //7折
     else if($('#final_discount_code').val() == "Pepper30"){
         final_discount_amount = Math.round((final_food_price_total + final_sup_price_total)*0.3);
