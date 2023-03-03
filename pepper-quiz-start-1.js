@@ -270,6 +270,19 @@ $('.discount-check-button').on('click',function(){
         $('.final_order_price_total').text(final_order_price_total);
 
     }
+    //Quiz500元折扣
+    else if($('#final_discount_code').val() == "quizwinner"){
+        final_discount_amount = 500;
+        final_order_price_total = final_food_price_total + final_sup_price_total + final_shipping - final_discount_amount;
+        $('.discount-error-message').addClass('hide-block');
+        $('#final_discount_code').val('quizwinner');
+        $('.discount-input-block').addClass('hide-block');
+        $('.discount-success-block').removeClass('hide-block');
+        $('.discount-code-name').text("quizwinner (為您第一箱折500元!)");
+        $('.final_discount_amount').text("- $"+final_discount_amount);
+        $('.final_order_price_total').text(final_order_price_total);
+
+    }
     //免單
     else if($('#final_discount_code').val() == "VVVIP"){
         final_discount_amount = (final_food_price_total + final_sup_price_total);
