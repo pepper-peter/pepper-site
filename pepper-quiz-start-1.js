@@ -364,8 +364,8 @@ $('.email-button').on('click',function(){
     $('.dog_kcal_out_half').text(kpdf);
     //ppd = Math.round(kpd*0.48);
     //ppdh =Math.round(kpd*0.48*0.6);
-    ppd = Math.round((gpd/100)*69.2);
-    ppdh = Math.round((gpdf/100)*79.2);
+    ppd = Math.round((gpd/100)*75);
+    ppdh = Math.round((gpdf/100)*85);
     $('.plan_ppd_full_out').text(ppd);
     $('.plan_ppd_half_out').text(ppdh);
     $('.sup_ppd_out_stone').text(sppd_stone);
@@ -379,13 +379,13 @@ $('.email-button').on('click',function(){
     if(kpd < 130){
         period = 80;
     }else if(kpd>=130 && kpd <160){
-        period = 65;
+        period = 66;
     }else if(kpd>=160 && kpd <190){
-        period = 55;
+        period = 56;
     }else if(kpd>=190 && kpd <240){
-        period = 45;
+        period = 46;
     }else if(kpd>=240 && kpd <330){
-        period = 35;
+        period = 36;
     }else if(kpd>=330 && kpd <430){
         period = 28;
     }else if(kpd>=430 && kpd <600){
@@ -483,8 +483,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.addClass('hide-message');
         OP3.removeClass('hide-message');
-        $('.div-block-step-2').removeClass('hide-block');
-        $('.move-down-block-2').addClass('hide-block');
+       // $('.div-block-step-2').removeClass('hide-block');
+       // $('.move-down-block-2').addClass('hide-block');
     }else if($('#owner_priority').val()=='3' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
@@ -509,8 +509,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.removeClass('hide-message');
         OP3.addClass('hide-message');
-        $('.move-down-block-2').removeClass('hide-block'); 
-        $('.div-block-step-2').addClass('hide-block'); 
+       // $('.move-down-block-2').removeClass('hide-block'); 
+       // $('.div-block-step-2').addClass('hide-block'); 
    }else if($('#owner_priority').val()=='2' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
@@ -522,8 +522,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.removeClass('hide-message');
         OP3.addClass('hide-message');
-        $('.div-block-step-2-mobile').addClass('hide-block-mobile');
-        $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
+       // $('.div-block-step-2-mobile').addClass('hide-block-mobile');
+       // $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
    }else if (($('#owner_priority').val()=='1' && $(window).width() > 767)){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
@@ -535,8 +535,8 @@ $('#owner_priority').on('change', function() {
         OP1.removeClass('hide-message');
         OP2.addClass('hide-message');
         OP3.addClass('hide-message');
-        $('.move-down-block-2').removeClass('hide-block');
-        $('.div-block-step-2').addClass('hide-block');
+       // $('.move-down-block-2').removeClass('hide-block');
+       // $('.div-block-step-2').addClass('hide-block');
   }else if (($('#owner_priority').val()=='1' && $(window).width() <= 767)){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
@@ -548,8 +548,8 @@ $('#owner_priority').on('change', function() {
         OP1.removeClass('hide-message');
         OP2.addClass('hide-message');
         OP3.addClass('hide-message');
-        $('.div-block-step-2-mobile').addClass('hide-block-mobile');
-        $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
+       // $('.div-block-step-2-mobile').addClass('hide-block-mobile');
+       // $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
   }
 });
 
