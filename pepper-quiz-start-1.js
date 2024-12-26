@@ -90,7 +90,7 @@ $('.final-button').on('click', function(){
         $('.final_ppd').val(final_ppd);
         $('.final_shipping_fee').text("免運");
         $('.final_shipping_fee').val(final_shipping);
-        $('.sup-block').removeClass('hide-block');
+        $('.sup-block').addClass('hide-block');
     }
 
     if($('.sup-check:checked').length==0){
@@ -474,7 +474,7 @@ $('#dog_bodygoalweight').attr("oninput",x);
 $('#owner_priority').on('change', function() {
   if($('#owner_priority').val()=='3' && $(window).width() > 767){
   	    $("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-        $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
         PRF.addClass('hide-message');
         PRH.removeClass('hide-message');
         OPD1.addClass('hide-message');
@@ -487,7 +487,7 @@ $('#owner_priority').on('change', function() {
         $('.move-down-block-2').addClass('hide-block');
     }else if($('#owner_priority').val()=='3' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-        $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
         PRF.addClass('hide-message');
         PRH.removeClass('hide-message');
         OPD1.addClass('hide-message');
@@ -500,7 +500,7 @@ $('#owner_priority').on('change', function() {
         $('.move-down-block-2-mobile').addClass('hide-block-mobile');
     }else if($('#owner_priority').val()=='2' && $(window).width() > 767){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
         PRF.removeClass('hide-message');
         PRH.addClass('hide-message');
         OPD1.addClass('hide-message');
@@ -513,7 +513,7 @@ $('#owner_priority').on('change', function() {
         $('.div-block-step-2').removeClass('hide-block'); 
    }else if($('#owner_priority').val()=='2' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
-        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
+        $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
         PRF.removeClass('hide-message');
         PRH.addClass('hide-message');
         OPD1.addClass('hide-message');
