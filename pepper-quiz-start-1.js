@@ -483,8 +483,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.addClass('hide-message');
         OP3.removeClass('hide-message');
-       // $('.div-block-step-2').removeClass('hide-block');
-       // $('.move-down-block-2').addClass('hide-block');
+        $('.div-block-step-2').removeClass('hide-block');
+        $('.move-down-block-2').addClass('hide-block');
     }else if($('#owner_priority').val()=='3' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Half']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Full']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
@@ -498,7 +498,7 @@ $('#owner_priority').on('change', function() {
         OP3.removeClass('hide-message');
         $('.div-block-step-2-mobile').removeClass('hide-block-mobile');
         $('.move-down-block-2-mobile').addClass('hide-block-mobile');
-	}else if($('#owner_priority').val()=='2' && $(window).width() > 767){
+    }else if($('#owner_priority').val()=='2' && $(window).width() > 767){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
         PRF.removeClass('hide-message');
@@ -509,8 +509,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.removeClass('hide-message');
         OP3.addClass('hide-message');
-       // $('.move-down-block-2').removeClass('hide-block'); 
-       // $('.div-block-step-2').addClass('hide-block'); 
+        $('.move-down-block-2').addClass('hide-block'); 
+        $('.div-block-step-2').removeClass('hide-block'); 
    }else if($('#owner_priority').val()=='2' && $(window).width() <= 767){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');;
@@ -522,8 +522,8 @@ $('#owner_priority').on('change', function() {
         OP1.addClass('hide-message');
         OP2.removeClass('hide-message');
         OP3.addClass('hide-message');
-       // $('.div-block-step-2-mobile').addClass('hide-block-mobile');
-       // $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
+        $('.div-block-step-2-mobile').removeClass('hide-block-mobile');
+        $('.move-down-block-2-mobile').addClass('hide-block-mobile');
    }else if (($('#owner_priority').val()=='1' && $(window).width() > 767)){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
@@ -535,8 +535,8 @@ $('#owner_priority').on('change', function() {
         OP1.removeClass('hide-message');
         OP2.addClass('hide-message');
         OP3.addClass('hide-message');
-       // $('.move-down-block-2').removeClass('hide-block');
-       // $('.div-block-step-2').addClass('hide-block');
+        $('.move-down-block-2').addClass('hide-block');
+        $('.div-block-step-2').removeClass('hide-block');
   }else if (($('#owner_priority').val()=='1' && $(window).width() <= 767)){
         $("input[name='plan_selection'][value='Full']").attr("checked",true).prev('.w-radio-input').addClass('w--redirected-checked');
         $("input[name='plan_selection'][value='Half']").attr("checked",false).prev('.w-radio-input').removeClass('w--redirected-checked');
@@ -548,8 +548,8 @@ $('#owner_priority').on('change', function() {
         OP1.removeClass('hide-message');
         OP2.addClass('hide-message');
         OP3.addClass('hide-message');
-       // $('.div-block-step-2-mobile').addClass('hide-block-mobile');
-       // $('.move-down-block-2-mobile').removeClass('hide-block-mobile');
+        $('.div-block-step-2-mobile').removeClass('hide-block-mobile');
+        $('.move-down-block-2-mobile').addClass('hide-block-mobile');
   }
 });
 
